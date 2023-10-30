@@ -1,0 +1,7 @@
+- name: "Install the 'syncthing' application package"
+  ansible.builtin.package:
+    name: syncthing
+    state: present
+  become: true
+  become_user: root
+
