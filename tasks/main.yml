@@ -1,5 +1,7 @@
 - block:
     - name: "Run all syncthing tasks"
       ansible.builtin.include_tasks: run_tasks.yml
-  tags: config_syncthing
+  tags:
+    - config_syncthing
+    - always
 
