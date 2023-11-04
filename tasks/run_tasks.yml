@@ -1,0 +1,6 @@
+- name: "Install syncthing application"
+  ansible.builtin.include_tasks: install/main.yml
+
+- name: "Configure syncthing application"
+  ansible.builtin.include_tasks: configure/main.yml
+
