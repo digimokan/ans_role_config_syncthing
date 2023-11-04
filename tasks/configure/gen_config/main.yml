@@ -1,6 +1,6 @@
 - name: "Generate '{{ syncthing_user_config_file_path }}', if not exist"
   ansible.builtin.command:
-    cmd: syncthing --generate --no-default-folder
+    cmd: syncthing generate --no-default-folder
     creates: "{{ syncthing_user_config_file_path }}"
   become: true
   become_user: "{{ syncthing_user_name }}"
