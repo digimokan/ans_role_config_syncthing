@@ -1,0 +1,9 @@
+- name: "Stop any running syncthing service"
+  ansible.builtin.include_tasks: stop_service/main.yml
+
+- name: "Generate syncthing config file, if not exist"
+  ansible.builtin.include_tasks: gen_config/main.yml
+
+- name: "Start and enable syncthing service"
+  ansible.builtin.include_tasks: start_service/main.yml
+

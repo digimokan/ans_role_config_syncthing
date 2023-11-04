@@ -1,0 +1,6 @@
+# main user syncthing config directory
+syncthing_user_config_dir: "/home/{{ syncthing_user_name }}/.config/syncthing"
+
+# user syncthing config file for settings, sync devices, and sync folders
+syncthing_user_config_file_path: "{{ syncthing_user_config_dir }}/config.xml"
+

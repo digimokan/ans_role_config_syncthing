@@ -1,0 +1,8 @@
+- name: "Stop 'syncthing' service, prior to editing config file"
+  ansible.builtin.service:
+    name: syncthing
+    state: stopped
+    enabled: true
+  become: true
+  become_user: root
+
