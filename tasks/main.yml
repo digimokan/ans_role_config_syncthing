@@ -1,7 +1,6 @@
-- block:
-    - name: "Run all syncthing tasks"
-      ansible.builtin.include_tasks: run_tasks.yml
-  tags:
-    - config_syncthing
-    - always
+- name: "Install syncthing application"
+  ansible.builtin.include_tasks: install/main.yml
+
+- name: "Configure syncthing application"
+  ansible.builtin.include_tasks: configure/main.yml
 
