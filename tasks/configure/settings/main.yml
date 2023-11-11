@@ -1,0 +1,3 @@
+- name: "Configure syncthing web UI settings"
+  ansible.builtin.include_tasks: web_ui.yml
+

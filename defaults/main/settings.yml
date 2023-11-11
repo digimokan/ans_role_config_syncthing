@@ -1,5 +1,0 @@
-# list of directories to sync among devices
-# syncthing_list_of_dirs_to_sync:
-#   - { unique_id: 'Books', dir_path: '/home/user2/Books' }
-syncthing_list_of_dirs_to_sync: []
-

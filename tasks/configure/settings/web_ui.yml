@@ -1,0 +1,15 @@
+- name: "Configure attributes for 'gui' element in '{{ syncthing_user_config_file_path }}'"
+  community.general.xml:
+    path: "{{ syncthing_user_config_file_path }}"
+    xpath: /configuration/gui
+    attribute: "{{ gui_attrib.name }}"
+    value: "{{ gui_attrib.val }}"
+  become: true
+  become_user: "{{ syncthing_user_name }}"
+  loop:
+    - { name: 'enabled', val: "{{ syncthing_enable_web_ui_access }}", descrip: 'allow web UI access' }
+    - { name: 'tls', val: "{{ syncthing_force_web_ui_https_only }}", descrip: 'force web UI https-only' }
+    - { name: 'debugging', val: "{{ syncthing_enable_rest_api_debug_endpoints }}", descrip: 'enable REST API debug debug endpoints' }
+  loop_control:
+    loop_var: gui_attrib
+

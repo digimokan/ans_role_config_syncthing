@@ -1,0 +1,19 @@
+# list of available Device IDs that are sharing folders for sync
+# Note: the Device ID of the local machine must be in this list
+# syncthing_list_of_available_device_ids:
+#   - 'XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX'
+#   - 'XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX'
+syncthing_list_of_available_sync_device_ids: []
+
+# list of available folders that other devices may share for sync
+# syncthing_list_of_available_sync_folders:
+#   - { folder_id: 'Books' }
+syncthing_list_of_available_sync_folders: []
+
+# list of local folders to share/sync with other devices
+# Note: folder_id matches a folder_id in syncthing_list_of_available_sync_folders
+# Note: sync_mode is 'sendreceive', 'sendonly', or 'receiveonly'
+# syncthing_list_of_local_folders_to_sync:
+#   - { folder_id: 'Books', folder_path: '/home/user2/Books', sync_mode: 'sendreceive' }
+syncthing_list_of_local_folders_to_sync: []
+
