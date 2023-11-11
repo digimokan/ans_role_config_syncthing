@@ -1,6 +1,6 @@
 # settings for the web-UI
 syncthing_enable_web_ui_access: 'true'
-syncthing_force_web_ui_https_only: 'true'
+syncthing_redirect_web_ui_to_https: 'true'
 syncthing_web_ui_address: 'https://127.0.0.1:8384'
 syncthing_enable_non_local_host_web_ui_login: 'false'
 syncthing_prompt_for_username_and_passwd: 'false'
