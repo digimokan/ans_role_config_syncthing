@@ -1,3 +1,6 @@
 - name: "Configure syncthing web UI settings"
   ansible.builtin.include_tasks: web_ui.yml
 
+- name: "Configure syncthing device-search settings"
+  ansible.builtin.include_tasks: device_search.yml
+

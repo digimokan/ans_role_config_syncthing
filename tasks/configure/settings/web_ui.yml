@@ -30,7 +30,7 @@
       val: "{{ syncthing_web_ui_address }}"
       descrip: 'web UI URL address'
     - name: 'insecureAdminAccess'
-      val: "{{ syncthing_enable_non_local_host_web_ui_login }}"
+      val: "{{ syncthing_enable_non_local_host_web_ui_access }}"
       descrip: 'enable non-local-host web UI login'
     - name: 'sendBasicAuthPrompt'
       val: "{{ syncthing_prompt_for_username_and_passwd }}"
