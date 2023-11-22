@@ -4,3 +4,9 @@ syncthing_user_config_dir: "/home/{{ syncthing_user_name }}/.config/syncthing"
 # user syncthing config file for settings, sync devices, and sync folders
 syncthing_user_config_file_path: "{{ syncthing_user_config_dir }}/config.xml"
 
+# user syncthing private key file
+syncthing_user_private_key_file_path: "{{ syncthing_user_config_dir }}/key.pem"
+
+# user syncthing public key file
+syncthing_user_public_key_file_path: "{{ syncthing_user_config_dir }}/cert.pem"
+

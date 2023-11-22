@@ -1,0 +1,16 @@
+- name: "Set user private key in '{{ syncthing_user_private_key_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ syncthing_user_private_key_file_path }}"
+    src: "key_pem.j2"
+    force: true
+  become: true
+  become_user: "{{ syncthing_user_name }}"
+
+- name: "Set user public key in '{{ syncthing_user_public_key_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ syncthing_user_public_key_file_path }}"
+    src: "cert_pem.j2"
+    force: true
+  become: true
+  become_user: "{{ syncthing_user_name }}"
+
