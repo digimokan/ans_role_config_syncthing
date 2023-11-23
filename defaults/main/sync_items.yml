@@ -1,9 +1,9 @@
 # list of available Device IDs that are sharing folders for sync
-# Note: the Device ID of the local machine must be in this list
-# syncthing_list_of_available_device_ids:
-#   - 'XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX'
-#   - 'XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX'
-syncthing_list_of_available_sync_device_ids: []
+# Note: an entry for the local machine must be in this list
+# syncthing_list_of_available_sync_devices:
+#   - { hostname: 'host1', device_id: 'XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX' }
+#   - { hostname: 'host2', device_id: 'XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX' }
+syncthing_list_of_available_sync_devices: []
 
 # list of available folders that other devices may share for sync
 # syncthing_list_of_available_sync_folders:
