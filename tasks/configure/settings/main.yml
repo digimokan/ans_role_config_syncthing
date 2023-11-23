@@ -1,6 +1,8 @@
-- name: "Configure syncthing web UI settings"
-  ansible.builtin.include_tasks: web_ui.yml
-
-- name: "Configure syncthing device-search settings"
-  ansible.builtin.include_tasks: device_search.yml
+- name: "Set all syncthing settings in '{{ syncthing_user_config_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ syncthing_user_config_file_path }}"
+    src: "config_xml.j2"
+    force: true
+  become: true
+  become_user: "{{ syncthing_user_name }}"
 

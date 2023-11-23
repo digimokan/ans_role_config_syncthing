@@ -1,0 +1,7 @@
+- name: "Create syncthing user config dir at '{{ syncthing_user_config_dir }}'"
+  ansible.builtin.file:
+    path: "{{ syncthing_user_config_dir }}"
+    state: directory
+  become: true
+  become_user: "{{ syncthing_user_name }}"
+
