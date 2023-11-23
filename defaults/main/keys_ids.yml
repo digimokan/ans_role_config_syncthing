@@ -1,5 +1,11 @@
 # to generate a new set of keys, along with a matching Device ID, run
 # --> syncthing --generate=/tmp/scratch_dir
+# /tmp.scratch_dir/key.pem will have private key
+# /tmp.scratch_dir/cert.pem will have public key
+# /tmp.scratch_dir/config.xml will have Device ID
+
+# local machine hostname (actual hostname, pairs with Device ID)
+# syncthing_local_machine_hostname: 'some-host.machine'
 
 # local machine ECDSA private key
 # syncthing_local_machine_private_key: |-
@@ -26,7 +32,4 @@
 # local machine Device ID (hash of public key, used in sync config)
 # Note: OK to share publicly (see https://docs.syncthing.net/dev/device-ids.html#device-ids)
 # syncthing_local_machine_device_id: 'XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX'
-
-# local machine hostname (actual hostname, pairs with Device ID)
-# syncthing_local_machine_hostname: 'some-host.machine'
 
