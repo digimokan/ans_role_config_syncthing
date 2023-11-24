@@ -1,0 +1,6 @@
+- name: "Check local hostname '{{ syncthing_local_machine_hostname }}' is in syncthing_list_of_available_sync_devices"
+  ansible.builtin.debug:
+    var: is_in_list
+  vars:
+    is_in_list: "{{ syncthing_list_of_available_sync_devices | selectattr('hostname', 'in', [ syncthing_local_machine_hostname ]) }}"
+

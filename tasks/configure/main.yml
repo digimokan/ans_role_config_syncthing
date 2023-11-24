@@ -1,3 +1,6 @@
+- name: "Check user-provided syncthing config vars"
+  ansible.builtin.include_tasks: check_config/main.yml
+
 - name: "Stop any running syncthing service"
   ansible.builtin.include_tasks: stop_service/main.yml
 
