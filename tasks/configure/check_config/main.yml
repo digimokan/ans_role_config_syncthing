@@ -1,10 +1,10 @@
 - name: "Check local hostname '{{ syncthing_local_machine_hostname }}' is in syncthing_list_of_available_sync_devices"
   ansible.builtin.assert:
-    that: local_hostname_is_in_list
+    that: "{{ syncthing_local_machine_hostname in all_hostnames_list }}"
     quiet: true
   vars:
     all_hostnames_list: "{{ syncthing_list_of_available_sync_devices | map(attribute='hostname') | list }}"
-    local_hostname_is_in_list: "{{ syncthing_local_machine_hostname in all_hostnames_list }}"
+    # local_hostname_is_in_list: "{{ syncthing_local_machine_hostname in all_hostnames_list }}"
 
 - name: "Print local Device ID '{{ syncthing_local_machine_device_id }}' is in syncthing_list_of_available_sync_devices"
   ansible.builtin.debug:
