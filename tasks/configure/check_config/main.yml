@@ -1,17 +1,3 @@
-- name: "Check local hostname '{{ syncthing_local_machine_hostname }}' in syncthing_list_of_available_sync_devices"
-  ansible.builtin.assert:
-    that: "{{ syncthing_local_machine_hostname in all_hostnames_list }}"
-    quiet: true
-  vars:
-    all_hostnames_list: "{{ syncthing_list_of_available_sync_devices | map(attribute='hostname') | list }}"
-
-- name: "Check local Device ID '{{ syncthing_local_machine_device_id }}' in syncthing_list_of_available_sync_devices"
-  ansible.builtin.assert:
-    that: "{{ found_device_id == syncthing_local_machine_device_id }}"
-    quiet: true
-  vars:
-    all_devices_list: "{{ syncthing_list_of_available_sync_devices }}"
-    local_hostname: "{{ syncthing_local_machine_hostname }}"
-    found_device_entry: "{{ all_devices_list | selectattr('hostname', 'contains', local_hostname) }}"
-    found_device_id: "{{ (found_device_entry | first).device_id }}"
+- name: "Check local hostname and Device ID are in common devices list"
+  ansible.builtin.include_tasks: devices.yml
 
