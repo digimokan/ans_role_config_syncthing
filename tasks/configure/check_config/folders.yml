@@ -1,0 +1,12 @@
+- name: "Check each folder in syncthing_list_of_local_folders_to_sync is in syncthing_list_of_available_sync_folders"
+  ansible.builtin.debug:
+    msg:
+      - "Iterating through local folder: {{ local_folder }}"
+      - "The full common folders list: {{ common_folders_list }}"
+      - "Testing local folder is in common folders list: {{ local_folder in common_folders_list }}"
+  loop: "{{ syncthing_list_of_local_folders_to_sync | map(attribute='folder_id') | list }}"
+  loop_control:
+    loop_var: local_folder
+  vars:
+    common_folders_list: "{{ syncthing_list_of_available_sync_folders | map(attribute='folder_id') | list }}"
+

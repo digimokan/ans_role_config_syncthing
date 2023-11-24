@@ -1,3 +1,6 @@
-- name: "Check local hostname and Device ID are in common devices list"
+- name: "Check that local hostname and Device ID are in common devices list"
   ansible.builtin.include_tasks: devices.yml
+
+- name: "Check that local folders to sync are in common folders list"
+  ansible.builtin.include_tasks: folders.yml
 
