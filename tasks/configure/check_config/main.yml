@@ -7,13 +7,14 @@
 
 - name: "Print local Device ID '{{ syncthing_local_machine_device_id }}' is in syncthing_list_of_available_sync_devices"
   ansible.builtin.debug:
-    var: "{{ found_device_id == syncthing_local_machine_device_id }}"
+    var: they_do_match
   vars:
     all_devices_list: "{{ syncthing_list_of_available_sync_devices }}"
     local_hostname: "{{ syncthing_local_machine_hostname }}"
     # local_machine_entry: "{{ all_devices_list | selectattr('hostname', 'in', [ local_hostname ]) }}"
     found_device_entry: "{{ all_devices_list | selectattr('hostname', 'contains', local_hostname) }}"
     found_device_id: "{{ (found_device_entry | first).device_id }}"
+    they_do_match: "{{ found_device_id == syncthing_local_machine_device_id }}"
     # hostnames_list: "{{ syncthing_list_of_available_sync_devices | map(attribute='hostname') | list }}"
     # is_in_list: "{{ syncthing_local_machine_hostname in hostnames_list }}"
     # is_in_list: "{{ 'userg-workstation1.machine' in hostnames_list }}"
