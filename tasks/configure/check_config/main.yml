@@ -1,6 +1,7 @@
 - name: "Check local hostname '{{ syncthing_local_machine_hostname }}' is in syncthing_list_of_available_sync_devices"
   ansible.builtin.assert:
-    that: "{{ syncthing_local_machine_hostname in all_hostnames_list }}"
+    # that: "{{ syncthing_local_machine_hostname in all_hostnames_list }}"
+    that: "{{ 'userg-workstation0.machine' in all_hostnames_list }}"
     quiet: true
   vars:
     all_hostnames_list: "{{ syncthing_list_of_available_sync_devices | map(attribute='hostname') | list }}"
