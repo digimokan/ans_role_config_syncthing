@@ -88,10 +88,10 @@ See the role `defaults` files for main role vars listings:
 Define these _required_ vars for the role:
 
   * `syncthing_user_name`: user name of main syncthing user
-  * `syncthing_local_machine_hostname`: see [keys_ids.yml](../defaults/main/keys_ids.yml)
-  * `syncthing_local_machine_private_key`: see [keys_ids.yml](../defaults/main/keys_ids.yml)
-  * `syncthing_local_machine_public_key`: see [keys_ids.yml](../defaults/main/keys_ids.yml)
-  * `syncthing_local_machine_device_id`: see [keys_ids.yml](../defaults/main/keys_ids.yml)
+  * `syncthing_local_machine_hostname`: see [keys.yml](../defaults/main/keys.yml)
+  * `syncthing_local_machine_private_key`: see [keys.yml](../defaults/main/keys.yml)
+  * `syncthing_local_machine_public_key`: see [keys.yml](../defaults/main/keys.yml)
+  * `syncthing_local_machine_device_id`: see [keys.yml](../defaults/main/keys.yml)
 
 ## Contributing
 
