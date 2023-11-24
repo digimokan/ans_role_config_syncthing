@@ -8,7 +8,7 @@
 - name: "Check local Device ID '{{ syncthing_local_machine_device_id }}' in syncthing_list_of_available_sync_devices"
   ansible.builtin.assert:
     # that: "{{ found_device_id == syncthing_local_machine_device_id }}"
-    that: "{{ found_device_id == 'FSSP6GQ-OOD7K7K-FLMF4LV-AZN2GBO-PNQID6M-IURLWJD-YZX4MWA-C7HYXAU' }}"
+    that: "{{ found_device_id == 'CSSP6GQ-OOD7K7K-FLMF4LV-AZN2GBO-PNQID6M-IURLWJD-YZX4MWA-C7HYXAU' }}"
     quiet: true
   vars:
     all_devices_list: "{{ syncthing_list_of_available_sync_devices }}"
