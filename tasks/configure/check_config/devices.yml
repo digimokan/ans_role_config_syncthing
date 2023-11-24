@@ -1,6 +1,7 @@
 - name: "Check local hostname '{{ syncthing_local_machine_hostname }}' in syncthing_list_of_available_sync_devices"
   ansible.builtin.assert:
     that: "{{ syncthing_local_machine_hostname in all_hostnames_list }}"
+    fail_msg: "local hostname '{{ syncthing_local_machine_hostname }}' not found in '{{ all_hostnames_list }}'"
     quiet: true
   vars:
     all_hostnames_list: "{{ syncthing_list_of_available_sync_devices | map(attribute='hostname') | list }}"
@@ -8,6 +9,7 @@
 - name: "Check local Device ID '{{ syncthing_local_machine_device_id }}' in syncthing_list_of_available_sync_devices"
   ansible.builtin.assert:
     that: "{{ found_device_id == syncthing_local_machine_device_id }}"
+    fail_msg: "local Device ID '{{ syncthing_local_machine_device_id }}' not matching in '{{ found_device_entry }}'"
     quiet: true
   vars:
     all_devices_list: "{{ syncthing_list_of_available_sync_devices }}"
