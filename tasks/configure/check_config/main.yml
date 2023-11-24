@@ -1,11 +1,11 @@
-- name: "Check local hostname '{{ syncthing_local_machine_hostname }}' is in syncthing_list_of_available_sync_devices"
+- name: "Check local hostname '{{ syncthing_local_machine_hostname }}' in syncthing_list_of_available_sync_devices"
   ansible.builtin.assert:
     that: "{{ syncthing_local_machine_hostname in all_hostnames_list }}"
     quiet: true
   vars:
     all_hostnames_list: "{{ syncthing_list_of_available_sync_devices | map(attribute='hostname') | list }}"
 
-- name: "Print local Device ID '{{ syncthing_local_machine_device_id }}' is in syncthing_list_of_available_sync_devices"
+- name: "Print local Device ID '{{ syncthing_local_machine_device_id }}' in syncthing_list_of_available_sync_devices"
   ansible.builtin.debug:
     var: they_do_match
   vars:
@@ -18,4 +18,13 @@
     # hostnames_list: "{{ syncthing_list_of_available_sync_devices | map(attribute='hostname') | list }}"
     # is_in_list: "{{ syncthing_local_machine_hostname in hostnames_list }}"
     # is_in_list: "{{ 'userg-workstation1.machine' in hostnames_list }}"
+
+- name: "Check local Device ID '{{ syncthing_local_machine_device_id }}' in syncthing_list_of_available_sync_devices"
+  ansible.builtin.assert:
+    var: "{{ found_device_id == syncthing_local_machine_device_id }}"
+  vars:
+    all_devices_list: "{{ syncthing_list_of_available_sync_devices }}"
+    local_hostname: "{{ syncthing_local_machine_hostname }}"
+    found_device_entry: "{{ all_devices_list | selectattr('hostname', 'contains', local_hostname) }}"
+    found_device_id: "{{ (found_device_entry | first).device_id }}"
 
