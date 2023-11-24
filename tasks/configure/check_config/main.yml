@@ -7,7 +7,7 @@
 
 - name: "Print local Device ID '{{ syncthing_local_machine_device_id }}' is in syncthing_list_of_available_sync_devices"
   ansible.builtin.debug:
-    var: found_device_id
+    var: "{{ found_device_id == syncthing_local_machine_device_id }}"
   vars:
     all_devices_list: "{{ syncthing_list_of_available_sync_devices }}"
     local_hostname: "{{ syncthing_local_machine_hostname }}"
