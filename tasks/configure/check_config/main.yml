@@ -5,5 +5,5 @@
     # is_in_list: "{{ syncthing_list_of_available_sync_devices | selectattr('hostname', 'in', [ syncthing_local_machine_hostname ]) }}"
     hostnames_list: "{{ syncthing_list_of_available_sync_devices | map(attribute='hostname') | list }}"
     # is_in_list: "{{ syncthing_local_machine_hostname in hostnames_list }}"
-    is_in_list: "{{ 'userg-workstation0.machine' in hostnames_list }}"
+    is_in_list: "{{ 'userg-workstation1.machine' in hostnames_list }}"
 
