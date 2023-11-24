@@ -1,6 +1,30 @@
-- name: "Check that local hostname and Device ID are in common devices list"
-  ansible.builtin.include_tasks: devices.yml
+- name: "Check local hostname '{{ syncthing_local_machine_hostname }}' in syncthing_list_of_available_sync_devices"
+  ansible.builtin.assert:
+    that: "{{ syncthing_local_machine_hostname in all_hostnames_list }}"
+    fail_msg: "local hostname '{{ syncthing_local_machine_hostname }}' not found in '{{ all_hostnames_list }}'"
+    quiet: true
+  vars:
+    all_hostnames_list: "{{ syncthing_list_of_available_sync_devices | map(attribute='hostname') | list }}"
 
-- name: "Check that local folders to sync are in common folders list"
-  ansible.builtin.include_tasks: folders.yml
+- name: "Check local Device ID '{{ syncthing_local_machine_device_id }}' in syncthing_list_of_available_sync_devices"
+  ansible.builtin.assert:
+    that: "{{ found_device_id == syncthing_local_machine_device_id }}"
+    fail_msg: "local Device ID '{{ syncthing_local_machine_device_id }}' not matching in '{{ found_device_entry }}'"
+    quiet: true
+  vars:
+    all_devices_list: "{{ syncthing_list_of_available_sync_devices }}"
+    local_hostname: "{{ syncthing_local_machine_hostname }}"
+    found_device_entry: "{{ all_devices_list | selectattr('hostname', 'contains', local_hostname) }}"
+    found_device_id: "{{ (found_device_entry | first).device_id }}"
+
+- name: "Check each folder in syncthing_list_of_local_folders_to_sync is in syncthing_list_of_available_sync_folders"
+  ansible.builtin.assert:
+    that: "{{ local_folder in common_folders_list }}"
+    fail_msg: "local folder '{{ local_folder }}' not found in '{{ common_folders_list }}'"
+    quiet: true
+  loop: "{{ syncthing_list_of_local_folders_to_sync | map(attribute='folder_id') | list }}"
+  loop_control:
+    loop_var: local_folder
+  vars:
+    common_folders_list: "{{ syncthing_list_of_available_sync_folders | map(attribute='folder_id') | list }}"
 
