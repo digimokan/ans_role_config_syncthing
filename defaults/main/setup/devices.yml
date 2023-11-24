@@ -1,5 +1,7 @@
 # list of available Device IDs that are sharing folders for sync
 # Note: an entry for the local machine must be in this list
+# --> entry's hostname must match syncthing_local_machine_hostname
+# --> entry's device_id must match syncthing_local_machine_device_id
 # syncthing_list_of_available_sync_devices:
 #   - { hostname: 'host1', device_id: 'XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX' }
 #   - { hostname: 'host2', device_id: 'XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX-XXXXXXX' }
