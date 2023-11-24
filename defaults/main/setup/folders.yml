@@ -1,6 +1,6 @@
 # list of available folders that other devices may share for sync
 # syncthing_list_of_available_sync_folders:
-#   - { folder_id: 'Books' }
+#   - { folder_id: 'st_books', folder_label: 'eBook Collection' }
 syncthing_list_of_available_sync_folders: []
 
 # list of local folders to share/sync with other devices
