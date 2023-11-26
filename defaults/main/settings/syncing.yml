@@ -1,0 +1,12 @@
+# enable filesystem-watcher for sync folders: detects changes via notifications
+syncthing_enable_folder_change_notifications: 'true'
+
+# filesystem-watcher will debounce folder changes for this number of seconds
+syncthing_folder_change_debounce_interval_sec: 10
+
+# separate from fs-watcher, do a full folder-change scan at this interval
+syncthing_fallback_full_scan_interval_sec: 1800
+
+# use native file permissions (i.e. don't use permissions set by other device)
+syncthing_use_local_host_folder_permissions: 'true'
+
