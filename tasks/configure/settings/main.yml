@@ -6,11 +6,6 @@
     local_folders_list: "{{ syncthing_list_of_local_folders_to_sync }}"
     id_filter: "{{ local_folders_list | selectattr('folder_id', '==', item.folder_id) | first }}"
 
-- name: "Test out combining folders list"
-  ansible.builtin.debug:
-    msg:
-      - "Combined folders list: {{ config_folders }}"
-
 - name: "Set all syncthing settings in '{{ syncthing_user_config_file_path }}'"
   ansible.builtin.template:
     dest: "{{ syncthing_user_config_file_path }}"
