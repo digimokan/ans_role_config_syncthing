@@ -6,6 +6,7 @@
     {% for device in syncthing_list_of_available_sync_devices %}
     <device id="{{ device.device_id }}" introducedBy=""></device>
     {% endfor %}
+    <markerName>{{ syncthing_sync_folder_markerdir_name }}</markerName>
   </folder>
   {% endfor %}
   <defaults>
@@ -13,6 +14,7 @@
       {% for device in syncthing_list_of_available_sync_devices %}
       <device id="{{ device.device_id }}" introducedBy=""></device>
       {% endfor %}
+      <markerName>{{ syncthing_sync_folder_markerdir_name }}</markerName>
     </folder>
   </defaults>
 </configuration>

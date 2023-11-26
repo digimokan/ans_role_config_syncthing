@@ -1,3 +1,6 @@
+# syncthing will only recognize/sync folders when this dummy dir is present
+syncthing_sync_folder_markerdir_name: '.stfolder'
+
 # enable filesystem-watcher for sync folders: detects changes via notifications
 syncthing_enable_folder_change_notifications: 'true'
 
