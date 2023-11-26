@@ -1,3 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<configuration version="37">
+<configuration version="{{ syncthing_config_file_version }}">
+  {% for folder in config_folders %}
+  <folder id="{{ folder.folder_id }}" label="{{ folder.folder_label }}" path="{{ folder.folder_path }}" type="{{ folder.sync_mode }}" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    {% for device in syncthing_list_of_available_sync_devices %}
+    <device id="{{ device.device_id }}" introducedBy=""></device>
+    {% endfor %}
+  </folder>
+  {% endfor %}
 </configuration>
+

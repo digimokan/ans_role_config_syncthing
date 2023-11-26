@@ -1,0 +1,5 @@
+# config-file version to set (newer features may require config-file migration)
+# See 'CurrentVersion', 'OldestHandledVersion' vars in source code:
+# --> https://github.com/syncthing/syncthing/blob/main/lib/config/config.go#L34
+syncthing_config_file_version: '37'
+
