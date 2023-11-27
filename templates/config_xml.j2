@@ -12,6 +12,11 @@
   {% for device in syncthing_list_of_available_sync_devices %}
   <device id="{{ device.device_id }}" name="{{ device.hostname }}" compression="{{ syncthing_folder_compresion_level }}"></device>
   {% endfor %}
+  <gui enabled="{{ syncthing_enable_web_ui_access }}" tls="{{ syncthing_redirect_web_ui_to_https }}" debugging="{{ syncthing_enable_rest_api_debug_endpoints }}">
+    <address>{{ syncthing_web_ui_address }}</address>
+    <insecureAdminAccess>{{ syncthing_enable_non_local_host_web_ui_access }}</insecureAdminAccess>
+    <sendBasicAuthPrompt>{{ syncthing_prompt_for_username_and_passwd }}</sendBasicAuthPrompt>
+  </gui>
   <defaults>
     <folder id="" label="" path="/home/{{ syncthing_user_name }}" type="sendreceive" rescanIntervalS="{{ syncthing_fallback_full_scan_interval_sec }}" fsWatcherEnabled="{{ syncthing_enable_folder_change_notifications }}" fsWatcherDelayS="{{ syncthing_folder_change_debounce_interval_sec }}" ignorePerms="{{ syncthing_use_local_host_folder_permissions }}">
       {% for device in syncthing_list_of_available_sync_devices %}
