@@ -4,10 +4,13 @@
   {% for folder in config_folders %}
   <folder id="{{ folder.folder_id }}" label="{{ folder.folder_label }}" path="{{ folder.folder_path }}" type="{{ folder.sync_mode }}" rescanIntervalS="{{ syncthing_fallback_full_scan_interval_sec }}" fsWatcherEnabled="{{ syncthing_enable_folder_change_notifications }}" fsWatcherDelayS="{{ syncthing_folder_change_debounce_interval_sec }}" ignorePerms="{{ syncthing_use_local_host_folder_permissions }}">
     {% for device in syncthing_list_of_available_sync_devices %}
-    <device id="{{ device.device_id }}" introducedBy=""></device>
+    <device id="{{ device.device_id }}"></device>
     {% endfor %}
     <markerName>{{ syncthing_sync_folder_markerdir_name }}</markerName>
   </folder>
+  {% endfor %}
+  {% for device in syncthing_list_of_available_sync_devices %}
+  <device id="{{ device.device_id }}" name="{{ device.hostname }}" compression="{{ syncthing_folder_compresion_level }}"></device>
   {% endfor %}
   <defaults>
     <folder id="" label="" path="/home/{{ syncthing_user_name }}" type="sendreceive" rescanIntervalS="{{ syncthing_fallback_full_scan_interval_sec }}" fsWatcherEnabled="{{ syncthing_enable_folder_change_notifications }}" fsWatcherDelayS="{{ syncthing_folder_change_debounce_interval_sec }}" ignorePerms="{{ syncthing_use_local_host_folder_permissions }}">
@@ -16,6 +19,7 @@
       {% endfor %}
       <markerName>{{ syncthing_sync_folder_markerdir_name }}</markerName>
     </folder>
+    <device id="" compression="{{ syncthing_folder_compresion_level }}"></device>
   </defaults>
 </configuration>
 
