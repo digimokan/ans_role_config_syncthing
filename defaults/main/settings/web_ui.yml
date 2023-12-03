@@ -13,6 +13,14 @@ syncthing_enable_non_local_host_web_ui_access: 'false'
 # if user login/password is not set, make web UI prompt user to set them
 syncthing_prompt_for_username_and_passwd: 'false'
 
+# theme for the web UI GUI
+# see https://docs.syncthing.net/dev/web.html
+# currently selectable themes are 'default', 'dark', 'black', 'light'
+syncthing_web_ui_theme: 'default'
+
+# an 32-character alphanumeric string used to interact with the REST API
+syncthing_rest_api_key: ''
+
 # open the REST API debugging endpoints
 syncthing_enable_rest_api_debug_endpoints: 'false'
 
