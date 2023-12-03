@@ -17,6 +17,7 @@
     <insecureAdminAccess>{{ syncthing_enable_non_local_host_web_ui_access }}</insecureAdminAccess>
     <sendBasicAuthPrompt>{{ syncthing_prompt_for_username_and_passwd }}</sendBasicAuthPrompt>
   </gui>
+  <ldap/>
   <defaults>
     <folder id="" label="" path="/home/{{ syncthing_user_name }}" type="sendreceive" rescanIntervalS="{{ syncthing_fallback_full_scan_interval_sec }}" fsWatcherEnabled="{{ syncthing_enable_folder_change_notifications }}" fsWatcherDelayS="{{ syncthing_folder_change_debounce_interval_sec }}" ignorePerms="{{ syncthing_use_local_host_folder_permissions }}">
       {% for device in syncthing_list_of_available_sync_devices %}
