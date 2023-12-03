@@ -10,7 +10,7 @@
   </folder>
   {% endfor %}
   {% for device in syncthing_list_of_available_sync_devices %}
-  <device id="{{ device.device_id }}" name="{{ device.hostname }}" compression="{{ syncthing_folder_compresion_level }}"></device>
+  <device id="{{ device.device_id }}" name="{{ device.hostname }}" compression="{{ syncthing_folder_compresion_level }}" introducer="{{ syncthing_allow_connected_device_to_introduce_other_devices }}" skipIntroductionRemovals="false" introducedBy=""></device>
   {% endfor %}
   <gui enabled="{{ syncthing_enable_web_ui_access }}" tls="{{ syncthing_redirect_web_ui_to_https }}" debugging="{{ syncthing_enable_rest_api_debug_endpoints }}">
     <address>{{ syncthing_web_ui_address }}</address>
@@ -27,7 +27,7 @@
       {% endfor %}
       <markerName>{{ syncthing_sync_folder_markerdir_name }}</markerName>
     </folder>
-    <device id="" compression="{{ syncthing_folder_compresion_level }}"></device>
+    <device id="" compression="{{ syncthing_folder_compresion_level }}" introducer="{{ syncthing_allow_connected_device_to_introduce_other_devices }}" skipIntroductionRemovals="false" introducedBy=""></device>
   </defaults>
 </configuration>
 

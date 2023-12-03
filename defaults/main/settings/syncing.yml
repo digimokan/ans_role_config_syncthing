@@ -16,3 +16,7 @@ syncthing_use_local_host_folder_permissions: 'true'
 # what to compress when syncing data: 'always', 'never', or 'metadata' (only)
 syncthing_folder_compresion_level: 'metadata'
 
+# if listed device A is connected to unlisted device B, add B to our device list
+# see https://docs.syncthing.net/users/introducer.html
+syncthing_allow_connected_device_to_introduce_other_devices: 'false'
+
