@@ -1,5 +1,5 @@
 # in Web UI GUI, ask the user if it is okay to submit anonymous usage data
-syncthing_ask_to_submit_anonymous_usage_data: 'false'
+syncthing_ask_to_submit_anonymous_usage_data: false
 
 # the url to submit anonymous usage data to
 syncthing_anonymous_usage_data_upload_url: 'https://data.syncthing.net/newdata'
