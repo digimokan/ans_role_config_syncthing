@@ -1,0 +1,12 @@
+# in Web UI GUI, ask the user if it is okay to submit anonymous usage data
+syncthing_ask_to_submit_anonymous_usage_data: 'false'
+
+# the url to submit anonymous usage data to
+syncthing_anonymous_usage_data_upload_url: 'https://data.syncthing.net/newdata'
+
+# allow submitting anonymous usage data with http
+syncthing_allow_anonymous_usage_data_with_http: 'false'
+
+# after startup, wait this number of seconds before submitting intial usage data
+syncthing_anonymous_usage_data_initial_delay_sec: '1800'
+

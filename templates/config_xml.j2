@@ -29,6 +29,12 @@
     <localAnnounceEnabled>{{ syncthing_search_for_devices_on_local_lan }}</localAnnounceEnabled>
     <relaysEnabled>{{ syncthing_use_device_relay_connections }}</relaysEnabled>
     <relayReconnectIntervalM>{{ syncthing_relay_connect_interval_minutes }}</relayReconnectIntervalM>
+    <urAccepted>{{ '0' if syncthing_ask_to_submit_anonymous_usage_data else '-1' }}</urAccepted>
+    <urSeen>0</urSeen>
+    <urUniqueID/>
+    <urURL>{{ syncthing_anonymous_usage_data_upload_url }}</urURL>
+    <urPostInsecurely>{{ syncthing_allow_anonymous_usage_data_with_http }}</urPostInsecurely>
+    <urInitialDelayS>{{ syncthing_anonymous_usage_data_initial_delay_sec }}</urInitialDelayS>
   </options>
   <defaults>
     <folder id="" label="" path="/home/{{ syncthing_user_name }}" type="sendreceive" rescanIntervalS="{{ syncthing_fallback_full_scan_interval_sec }}" fsWatcherEnabled="{{ syncthing_enable_folder_change_notifications }}" fsWatcherDelayS="{{ syncthing_folder_change_debounce_interval_sec }}" ignorePerms="{{ syncthing_use_local_host_folder_permissions }}">
