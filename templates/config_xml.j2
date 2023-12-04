@@ -23,6 +23,13 @@
     <sendBasicAuthPrompt>{{ syncthing_prompt_for_username_and_passwd }}</sendBasicAuthPrompt>
   </gui>
   <ldap/>
+  <options>
+    <globalAnnounceServer>{{ syncthing_public_lookup_server_address }}</globalAnnounceServer>
+    <globalAnnounceEnabled>{{ syncthing_search_for_devices_on_public_lookup_server }}</globalAnnounceEnabled>
+    <localAnnounceEnabled>{{ syncthing_search_for_devices_on_local_lan }}</localAnnounceEnabled>
+    <relaysEnabled>{{ syncthing_use_device_relay_connections }}</relaysEnabled>
+    <relayReconnectIntervalM>{{ syncthing_relay_connect_interval_minutes }}</relayReconnectIntervalM>
+  </options>
   <defaults>
     <folder id="" label="" path="/home/{{ syncthing_user_name }}" type="sendreceive" rescanIntervalS="{{ syncthing_fallback_full_scan_interval_sec }}" fsWatcherEnabled="{{ syncthing_enable_folder_change_notifications }}" fsWatcherDelayS="{{ syncthing_folder_change_debounce_interval_sec }}" ignorePerms="{{ syncthing_use_local_host_folder_permissions }}">
       {% for device in syncthing_list_of_available_sync_devices %}
