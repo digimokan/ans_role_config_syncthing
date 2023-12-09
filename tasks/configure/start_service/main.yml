@@ -2,14 +2,8 @@
   ansible.builtin.service:
     name: syncthing
     state: started
-  changed_when: false
-  become: true
-  become_user: root
-
-- name: "Enable 'syncthing' service to start on boot"
-  ansible.builtin.service:
-    name: syncthing
     enabled: true
+  changed_when: false
   become: true
   become_user: root
 
