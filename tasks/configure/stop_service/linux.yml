@@ -1,0 +1,9 @@
+- name: "Stop 'syncthing' service"
+  ansible.builtin.systemd_service:
+    name: syncthing
+    state: stopped
+    scope: user
+  changed_when: false
+  become: true
+  become_user: root
+

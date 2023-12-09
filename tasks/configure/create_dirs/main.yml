@@ -1,0 +1,19 @@
+- name: "Create syncthing user config dir at '{{ syncthing_user_config_dir }}'"
+  ansible.builtin.file:
+    path: "{{ syncthing_user_config_dir }}"
+    state: directory
+  become: true
+  become_user: "{{ syncthing_user_name }}"
+
+- name: "Create syncthing service logging dir at '{{ logging_dir }}'"
+  ansible.builtin.file:
+    path: "{{ logging_dir }}"
+    state: directory
+    owner: "{{ syncthing_user_name }}"
+    group: "{{ syncthing_user_name }}"
+    mode: '755'
+  vars:
+    logging_dir: "{{ syncthing_service_log_file_path | dirname }}"
+  become: true
+  become_user: root
+

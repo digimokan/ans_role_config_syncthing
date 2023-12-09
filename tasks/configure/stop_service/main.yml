@@ -1,8 +1,8 @@
-- name: "Stop 'syncthing' service, prior to editing config file"
-  ansible.builtin.service:
-    name: syncthing
-    state: stopped
-  changed_when: false
-  become: true
-  become_user: root
+- name: "Stop service for Linux"
+  ansible.builtin.include_tasks: linux.yml
+  when: ansible_system == "Linux"
+
+- name: "stop service for FreeBSD"
+  ansible.builtin.include_tasks: freebsd.yml
+  when: ansible_os_family == "FreeBSD"
 

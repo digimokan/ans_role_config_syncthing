@@ -1,5 +1,5 @@
 # main user syncthing config directory
-syncthing_user_config_dir: "/home/{{ syncthing_user_name }}/.config/syncthing"
+syncthing_user_config_dir: "/home/{{ syncthing_user_name }}/.local/state/syncthing"
 
 # user syncthing private key file
 syncthing_user_private_key_file_path: "{{ syncthing_user_config_dir }}/key.pem"
@@ -9,4 +9,7 @@ syncthing_user_public_key_file_path: "{{ syncthing_user_config_dir }}/cert.pem"
 
 # user syncthing config file for settings, sync devices, and sync folders
 syncthing_user_config_file_path: "{{ syncthing_user_config_dir }}/config.xml"
+
+# syncthing will log to this file as it runs
+syncthing_service_log_file_path: "/var/log/syncthing/syncthing.log"
 

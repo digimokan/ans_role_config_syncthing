@@ -1,11 +1,11 @@
 - name: "Check user-provided syncthing config vars"
   ansible.builtin.include_tasks: check_config/main.yml
 
-- name: "Stop any running syncthing service"
+- name: "Stop syncthing service, prior to config tasks"
   ansible.builtin.include_tasks: stop_service/main.yml
 
-- name: "Create syncthing user config dir"
-  ansible.builtin.include_tasks: config_dir/main.yml
+- name: "Create syncthing user config and logging directories"
+  ansible.builtin.include_tasks: create_dirs/main.yml
 
 - name: "Set user-provided private, public keys in syncthing key files"
   ansible.builtin.include_tasks: set_keys/main.yml
