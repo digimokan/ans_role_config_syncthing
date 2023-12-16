@@ -1,4 +1,10 @@
-# Note: see available service setting vars in /usr/local/etc/rc.d/syncthing
+# Available Service Setting Vars:
+# --> /usr/local/etc/rc.d/syncthing
+# Config Refs:
+# --> https://wiki.freebsd.org/syncthing
+# --> https://blog.kollerie.com/posts/2021/syncthing-on-freebsd/
+# --> https://medium.com/@vermaden/syncthing-on-freebsd-1b430a310247
+
 - name: "Configure the syncthing service in '{{ syncthing_freebsd_rc_conf_filepath }}'"
   community.general.sysrc:
     path: "{{ syncthing_freebsd_rc_conf_filepath }}"

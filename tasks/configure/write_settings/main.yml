@@ -1,3 +1,6 @@
+# Main Config Ref:
+# --> https://docs.syncthing.net/users/config.html
+
 - name: "Create config_folders: add common fields to syncthing_list_of_local_folders_to_sync"
   set_fact:
     config_folders: "{{ config_folders | default([]) + [item | combine(id_filter)] }}"
