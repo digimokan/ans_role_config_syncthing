@@ -1,4 +1,5 @@
 # main user syncthing config directory
+# Note: this is the new default user config dir since syncthing version 1.27.0
 syncthing_user_config_dir: "/home/{{ syncthing_user_name }}/.local/state/syncthing"
 
 # user syncthing private key file

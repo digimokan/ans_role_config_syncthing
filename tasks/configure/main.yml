@@ -4,6 +4,9 @@
 - name: "Stop syncthing service, prior to config tasks"
   ansible.builtin.include_tasks: stop_service/main.yml
 
+- name: "Configure OS-specific syncthing service files"
+  ansible.builtin.include_tasks: config_service/main.yml
+
 - name: "Create syncthing user config and logging directories"
   ansible.builtin.include_tasks: create_dirs/main.yml
 

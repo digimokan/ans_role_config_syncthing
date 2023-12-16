@@ -1,0 +1,3 @@
+# syncthing Linux systemd "user" service filepath
+syncthing_linux_systemd_user_service_filepath: "/usr/lib/systemd/user/syncthing.service"
+

@@ -1,0 +1,17 @@
+# Note: see available service setting vars in /usr/local/etc/rc.d/syncthing
+- name: "Configure the syncthing service in '{{ syncthing_freebsd_rc_conf_filepath }}'"
+  community.general.sysrc:
+    path: "{{ syncthing_freebsd_rc_conf_filepath }}"
+    name: "{{ setting.name }}"
+    value: "{{ setting.val }}"
+    state: present
+  become: true
+  become_user: root
+  loop:
+    - { name: 'syncthing_user', val: "{{ syncthing_user_name }}", descrip: 'run service as this user' }
+    - { name: 'syncthing_group', val: "{{ syncthing_user_name }}", descrip: 'run service as this group' }
+    - { name: 'syncthing_log_file', val: "{{ syncthing_service_log_file_path }}", descrip: 'service log file' }
+    - { name: 'syncthing_home', val: "{{ syncthing_user_config_dir }}", descrip: 'user config dir' }
+  loop_control:
+    loop_var: setting
+

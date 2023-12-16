@@ -1,0 +1,8 @@
+- name: "Configure service for Linux"
+  ansible.builtin.include_tasks: linux.yml
+  when: ansible_system == "Linux"
+
+- name: "Configure service for FreeBSD"
+  ansible.builtin.include_tasks: freebsd.yml
+  when: ansible_os_family == "FreeBSD"
+

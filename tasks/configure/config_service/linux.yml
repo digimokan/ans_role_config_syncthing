@@ -1,0 +1,17 @@
+- name: "Configure the syncthing service in {{ syncthing_linux_systemd_user_service_filepath }}"
+  ansible.builtin.lineinfile:
+    path: "{{ syncthing_linux_systemd_user_service_filepath }}"
+    regexp: >-
+      ^ExecStart=
+    line: >-
+      ExecStart=/usr/bin/syncthing
+      --no-browser
+      --no-restart
+      --home={{ syncthing_user_config_dir }}
+      --logfile={{ syncthing_service_log_file_path }}
+    create: false
+    state: present
+    backup: true
+  become: true
+  become_user: root
+
