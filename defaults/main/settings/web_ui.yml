@@ -4,8 +4,8 @@ syncthing_enable_web_ui_access: 'true'
 # redirect any http acess to the web UI through https
 syncthing_redirect_web_ui_to_https: 'true'
 
-# URL to access the web UI GUI
-syncthing_web_ui_address: 'https://127.0.0.1:8384'
+# address and port to access the web UI GUI (do not specify http/https)
+syncthing_web_ui_address: '127.0.0.1:8384'
 
 # allow accessing the web UI from outside the local machine
 syncthing_enable_non_local_host_web_ui_access: 'false'
