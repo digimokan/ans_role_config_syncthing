@@ -6,9 +6,9 @@
     local_folders_list: "{{ syncthing_list_of_local_folders_to_sync }}"
     id_filter: "{{ local_folders_list | selectattr('folder_id', '==', item.folder_id) | first }}"
 
-- name: "Set all syncthing settings in '{{ syncthing_user_config_file_path }}'"
+- name: "Write all syncthing settings to '{{ syncthing_user_settings_file_path }}'"
   ansible.builtin.template:
-    dest: "{{ syncthing_user_config_file_path }}"
+    dest: "{{ syncthing_user_settings_file_path }}"
     src: "config_xml.j2"
     force: true
   become: true

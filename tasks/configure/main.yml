@@ -10,8 +10,8 @@
 - name: "Set user-provided private, public keys in syncthing key files"
   ansible.builtin.include_tasks: set_keys/main.yml
 
-- name: "Configure all syncthing settings"
-  ansible.builtin.include_tasks: settings/main.yml
+- name: "Write all syncthing settings to the settings file"
+  ansible.builtin.include_tasks: write_settings/main.yml
 
 # - name: "Start and enable syncthing service"
 #   ansible.builtin.include_tasks: start_service/main.yml
