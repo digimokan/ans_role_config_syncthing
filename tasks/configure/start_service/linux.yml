@@ -1,0 +1,10 @@
+- name: "Start 'syncthing' service, and enable it to start on boot"
+  ansible.builtin.systemd_service:
+    name: syncthing
+    state: started
+    enabled: true
+    scope: user
+  changed_when: false
+  become: true
+  become_user: root
+
