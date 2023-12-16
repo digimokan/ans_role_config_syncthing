@@ -16,6 +16,6 @@
 - name: "Write all syncthing settings to the settings file"
   ansible.builtin.include_tasks: write_settings/main.yml
 
-# - name: "Start and enable syncthing service"
-#   ansible.builtin.include_tasks: start_service/main.yml
+- name: "Start and enable syncthing service"
+  ansible.builtin.include_tasks: start_service/main.yml
 
