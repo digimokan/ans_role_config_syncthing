@@ -17,7 +17,7 @@ syncthing_use_local_host_folder_permissions: 'true'
 syncthing_folder_compresion_level: 'metadata'
 
 # file-conflict copies to keep: 'unlimited'  or '<integer>' (can be 0)
-syncthing_number_of_file_sync_copies_to_keep: 'unlimited'
+syncthing_number_of_file_sync_copies_to_keep: '10'
 
 # when local machine disk space is less than XX%, stop syncing
 syncthing_stop_syncing_at_disk_free_pct: '5'
