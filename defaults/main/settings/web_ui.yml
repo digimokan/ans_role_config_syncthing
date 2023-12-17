@@ -13,6 +13,9 @@ syncthing_enable_non_local_host_web_ui_access: 'false'
 # if user login/password is not set, make web UI prompt user to set them
 syncthing_prompt_for_username_and_passwd: 'false'
 
+# send scan progress info to the web UI at this interval
+syncthing_web_ui_scan_progress_update_sec: '1'
+
 # theme for the web UI GUI
 # see https://docs.syncthing.net/dev/web.html
 # currently selectable themes are 'default', 'dark', 'black', 'light'

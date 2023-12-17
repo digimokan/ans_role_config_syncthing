@@ -7,6 +7,7 @@
     <device id="{{ device.device_id }}"></device>
     {% endfor %}
     <minDiskFree unit="%">{{ syncthing_stop_syncing_at_disk_free_pct }}</minDiskFree>
+    <scanProgressIntervalS>{{ syncthing_web_ui_scan_progress_update_sec }}</scanProgressIntervalS>
     <markerName>{{ syncthing_sync_folder_markerdir_name }}</markerName>
   </folder>
   {% endfor %}
@@ -43,6 +44,7 @@
       <device id="{{ device.device_id }}" introducedBy=""></device>
       {% endfor %}
       <minDiskFree unit="%">{{ syncthing_stop_syncing_at_disk_free_pct }}</minDiskFree>
+      <scanProgressIntervalS>{{ syncthing_web_ui_scan_progress_update_sec }}</scanProgressIntervalS>
       <markerName>{{ syncthing_sync_folder_markerdir_name }}</markerName>
     </folder>
     <device id="" compression="{{ syncthing_folder_compresion_level }}" introducer="{{ syncthing_allow_connected_device_to_introduce_other_devices }}" skipIntroductionRemovals="false" introducedBy="">
