@@ -18,6 +18,8 @@
     <address>dynamic</address>
     <paused>false</paused>
     <autoAcceptFolders>false</autoAcceptFolders>
+    <maxSendKbps>{{ '0' if (syncthing_max_send_rate_kbps == 'unlimited') else syncthing_max_send_rate_kbps }}</maxSendKbps>
+    <maxRecvKbps>{{ '0' if (syncthing_max_receive_rate_kbps == 'unlimited') else syncthing_max_receive_rate_kbps }}</maxRecvKbps>
   </device>
   {% endfor %}
   <gui enabled="{{ syncthing_enable_web_ui_access }}" tls="{{ syncthing_redirect_web_ui_to_https }}" debugging="{{ syncthing_enable_rest_api_debug_endpoints }}">
@@ -56,6 +58,8 @@
       <address>dynamic</address>
       <paused>false</paused>
       <autoAcceptFolders>false</autoAcceptFolders>
+      <maxSendKbps>{{ '0' if (syncthing_max_send_rate_kbps == 'unlimited') else syncthing_max_send_rate_kbps }}</maxSendKbps>
+      <maxRecvKbps>{{ '0' if (syncthing_max_receive_rate_kbps == 'unlimited') else syncthing_max_receive_rate_kbps }}</maxRecvKbps>
     </device>
   </defaults>
 </configuration>

@@ -22,6 +22,10 @@ syncthing_number_of_file_sync_copies_to_keep: '10'
 # when local machine disk space is less than XX%, stop syncing
 syncthing_stop_syncing_at_disk_free_pct: '5'
 
+# max send/receive rate for this machine: 'unlimited'  or '<positive_integer>'
+syncthing_max_send_rate_kbps: 'unlimited'
+syncthing_max_receive_rate_kbps: 'unlimited'
+
 # if listed device A is connected to unlisted device B, add B to our device list
 # see https://docs.syncthing.net/users/introducer.html
 syncthing_allow_connected_device_to_introduce_other_devices: 'false'
