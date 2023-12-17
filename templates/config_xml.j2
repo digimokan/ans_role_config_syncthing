@@ -9,6 +9,7 @@
     <minDiskFree unit="%">{{ syncthing_stop_syncing_at_disk_free_pct }}</minDiskFree>
     <scanProgressIntervalS>{{ syncthing_web_ui_scan_progress_update_sec }}</scanProgressIntervalS>
     <maxConflicts>{{ '-1' if (syncthing_number_of_file_sync_copies_to_keep == 'unlimited') else syncthing_number_of_file_sync_copies_to_keep }}</maxConflicts>
+    <paused>false</paused>
     <markerName>{{ syncthing_sync_folder_markerdir_name }}</markerName>
   </folder>
   {% endfor %}
@@ -47,6 +48,7 @@
       <minDiskFree unit="%">{{ syncthing_stop_syncing_at_disk_free_pct }}</minDiskFree>
       <scanProgressIntervalS>{{ syncthing_web_ui_scan_progress_update_sec }}</scanProgressIntervalS>
       <maxConflicts>{{ '-1' if (syncthing_number_of_file_sync_copies_to_keep == 'unlimited') else syncthing_number_of_file_sync_copies_to_keep }}</maxConflicts>
+      <paused>false</paused>
       <markerName>{{ syncthing_sync_folder_markerdir_name }}</markerName>
     </folder>
     <device id="" compression="{{ syncthing_folder_compresion_level }}" introducer="{{ syncthing_allow_connected_device_to_introduce_other_devices }}" skipIntroductionRemovals="false" introducedBy="">
