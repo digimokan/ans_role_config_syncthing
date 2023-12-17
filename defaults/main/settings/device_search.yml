@@ -7,6 +7,9 @@ syncthing_public_lookup_server_address: 'default'
 # search for devices on the local LAN, with broadcasting
 syncthing_search_for_devices_on_local_lan: 'true'
 
+# search-retry interval for attemps to connect to unconnected devices
+syncthing_search_retry_interval_sec: '30'
+
 # connect to devices through relay devices
 syncthing_use_device_relay_connections: 'true'
 
