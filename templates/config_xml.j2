@@ -40,6 +40,10 @@
     <relaysEnabled>{{ syncthing_use_device_relay_connections }}</relaysEnabled>
     <relayReconnectIntervalM>{{ syncthing_relay_connect_interval_minutes }}</relayReconnectIntervalM>
     <startBrowser>{{ syncthing_open_browser_web_ui_on_start }}</startBrowser>
+    <natEnabled>{{ syncthing_enable_nat }}</natEnabled>
+    <natLeaseMinutes>{{ syncthing_nat_lease_request_minutes }}</natLeaseMinutes>
+    <natRenewalMinutes>{{ syncthing_nat_lease_renewal_minutes }}</natRenewalMinutes>
+    <natTimeoutSeconds>{{ syncthing_nat_upnp_scan_timeout_sec }}</natTimeoutSeconds>
     <urAccepted>{{ '0' if syncthing_ask_to_submit_anonymous_usage_data else '-1' }}</urAccepted>
     <urSeen>0</urSeen>
     <urUniqueID/>

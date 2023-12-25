@@ -1,0 +1,12 @@
+# enable NAT: perform UPnP, NAT-PMP port mapping for incoming sync connections
+syncthing_enable_nat: 'true'
+
+# for NAT, request a lease for this many minutes (0 for permanent lease)
+syncthing_nat_lease_request_minutes: '60'
+
+# for NAT, request to renew the lease after this many minutes
+syncthing_nat_lease_renewal_minutes: '30'
+
+# for NAT, wait this long for responses when scanning for UPnP devices
+syncthing_nat_upnp_scan_timeout_sec: '10'
+
