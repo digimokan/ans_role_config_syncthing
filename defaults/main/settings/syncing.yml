@@ -26,6 +26,9 @@ syncthing_stop_syncing_at_disk_free_pct: '5'
 syncthing_max_send_rate_kbps: 'unlimited'
 syncthing_max_receive_rate_kbps: 'unlimited'
 
+# keep data for partial/failed transfers, to speed up later retries
+syncthing_retain_partial_failed_transfer_hrs: '24'
+
 # if listed device A is connected to unlisted device B, add B to our device list
 # see https://docs.syncthing.net/users/introducer.html
 syncthing_allow_connected_device_to_introduce_other_devices: 'false'

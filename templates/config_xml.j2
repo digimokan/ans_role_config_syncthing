@@ -52,6 +52,7 @@
     <urInitialDelayS>{{ syncthing_anonymous_usage_data_initial_delay_sec }}</urInitialDelayS>
     <autoUpgradeIntervalH>{{ '0' if (syncthing_auto_upgrade_interval_hrs == 'never') else syncthing_auto_upgrade_interval_hrs }}</autoUpgradeIntervalH>
     <upgradeToPreReleases>{{ syncthing_auto_upgrade_to_release_candidates }}</upgradeToPreReleases>
+    <keepTemporariesH>{{ syncthing_retain_partial_failed_transfer_hrs }}</keepTemporariesH>
   </options>
   <defaults>
     <folder id="" label="" path="/home/{{ syncthing_user_name }}" type="sendreceive" rescanIntervalS="{{ syncthing_fallback_full_scan_interval_sec }}" fsWatcherEnabled="{{ syncthing_enable_folder_change_notifications }}" fsWatcherDelayS="{{ syncthing_folder_change_debounce_interval_sec }}" ignorePerms="{{ syncthing_use_local_host_folder_permissions }}">
