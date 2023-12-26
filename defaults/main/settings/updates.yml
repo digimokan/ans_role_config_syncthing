@@ -1,0 +1,10 @@
+# interval to check for new syncthing version and auto-upgrade
+# use 'never' to avoid checking and auto-upgrade
+syncthing_auto_upgrade_interval_hrs: 'never'
+
+# when checking for new syncthing version, check for release candidates as well
+syncthing_auto_upgrade_to_release_candidates: 'false'
+
+# url to use to check for new releases
+syncthing_check_releases_url: 'https://upgrades.syncthing.net/meta.json'
+

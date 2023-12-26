@@ -1,12 +1,14 @@
-# interval to check for new syncthing version and auto-upgrade
-# use 'never' to avoid checking and auto-upgrade
-syncthing_auto_upgrade_interval_hrs: 'never'
+# in Web UI GUI, ask the user if it is okay to submit anonymous usage data
+syncthing_ask_to_submit_anonymous_usage_data: false
 
-# when checking for new syncthing version, check for release candidates as well
-syncthing_auto_upgrade_to_release_candidates: 'false'
+# the url to submit anonymous usage data to
+syncthing_anonymous_usage_data_upload_url: 'https://data.syncthing.net/newdata'
 
-# url to use to check for new releases
-syncthing_check_releases_url: 'https://upgrades.syncthing.net/meta.json'
+# allow submitting anonymous usage data with http
+syncthing_allow_anonymous_usage_data_with_http: 'false'
+
+# after startup, wait this number of seconds before submitting intial usage data
+syncthing_anonymous_usage_data_initial_delay_sec: '1800'
 
 # enable syncthing crash-reporting
 syncthing_enable_crash_reporting: 'false'
