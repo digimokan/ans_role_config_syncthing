@@ -34,6 +34,8 @@
     <globalAnnounceServer>{{ syncthing_public_lookup_server_address }}</globalAnnounceServer>
     <globalAnnounceEnabled>{{ syncthing_search_for_devices_on_public_lookup_server }}</globalAnnounceEnabled>
     <localAnnounceEnabled>{{ syncthing_search_for_devices_on_local_lan }}</localAnnounceEnabled>
+    <localAnnouncePort>{{ syncthing_local_lan_ipv4_listen_broadcast_port }}</localAnnouncePort>
+    <localAnnounceMCAddr>{{ syncthing_local_lan_ipv6_listen_multicast_port }}</localAnnounceMCAddr>
     <maxSendKbps>{{ '0' if (syncthing_max_send_rate_kbps == 'unlimited') else syncthing_max_send_rate_kbps }}</maxSendKbps>
     <maxRecvKbps>{{ '0' if (syncthing_max_receive_rate_kbps == 'unlimited') else syncthing_max_receive_rate_kbps }}</maxRecvKbps>
     <reconnectionIntervalS>{{ syncthing_search_retry_interval_sec }}</reconnectionIntervalS>
