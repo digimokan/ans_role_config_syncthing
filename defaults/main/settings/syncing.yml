@@ -29,6 +29,9 @@ syncthing_max_receive_rate_kbps: 'unlimited'
 # keep data for partial/failed transfers, to speed up later retries
 syncthing_retain_partial_failed_transfer_hrs: '24'
 
+# cache results of ignore pattern evaluation (usually not needed, but can slow)
+syncthing_cache_ignored_files_evaluations: 'false'
+
 # if listed device A is connected to unlisted device B, add B to our device list
 # see https://docs.syncthing.net/users/introducer.html
 syncthing_allow_connected_device_to_introduce_other_devices: 'false'
