@@ -8,6 +8,9 @@ syncthing_public_lookup_server_address: 'default'
 syncthing_search_for_devices_on_local_lan: 'true'
 
 # local announce IPv4 listen/broadcast port, IPv6 listen/multicast port
+# Note:
+# --> *listen* port is used for device search
+# --> default *sync* port 22000 is used for syncing data
 syncthing_local_lan_ipv4_listen_broadcast_port: '21027'
 syncthing_local_lan_ipv6_listen_multicast_port: '[ff12::8384]:21027'
 
