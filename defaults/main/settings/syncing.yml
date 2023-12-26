@@ -25,6 +25,7 @@ syncthing_stop_syncing_at_disk_free_pct: '5'
 # max send/receive rate for this machine: 'unlimited'  or '<positive_integer>'
 syncthing_max_send_rate_kbps: 'unlimited'
 syncthing_max_receive_rate_kbps: 'unlimited'
+syncthing_apply_max_send_receive_limits_on_lan: 'true'
 
 # keep data for partial/failed transfers, to speed up later retries
 syncthing_retain_partial_failed_transfer_hrs: '24'
